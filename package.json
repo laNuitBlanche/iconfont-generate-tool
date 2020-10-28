@@ -1,0 +1,24 @@
+{
+  "name": "iconfont-generate-tool",
+  "version": "1.0.0",
+  "description": "A tool to generate Font Icon according to SVG file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "iconfont"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "globby": "^11.0.1",
+    "nunjucks": "^3.2.2",
+    "svg2ttf": "^5.0.0",
+    "svgicons2svgfont": "^9.1.1",
+    "ttf2eot": "^2.0.0",
+    "ttf2woff": "^2.0.2",
+    "ttf2woff2-no-gyp": "^2.0.5"
+  }
+}
