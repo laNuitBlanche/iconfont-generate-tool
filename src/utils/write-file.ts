@@ -12,7 +12,7 @@ export function writeFileAsync(filename: string,data: string){
 }
 
 function mkdirs(dirpath:string) {
-  if(fs.existsSync(path.dirname(dirpath))){
+  if(!fs.existsSync(path.dirname(dirpath))){
     mkdirs(path.dirname(dirpath));
   }
   if(!fs.existsSync(dirpath)){

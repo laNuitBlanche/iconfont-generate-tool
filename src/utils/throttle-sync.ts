@@ -1,8 +1,8 @@
-export default class AsyncThrottle {
+export default class ThrottleSync {
   private num: number = 0;
   private current: number = 0;
   private queue: Function[] = [];
-  private fn;
+  private fn:Function;
   constructor(protected max: number) {
     if (typeof max !== "number") {
       throw new Error("asyncThrottle error:`max` params must be a number");
@@ -26,6 +26,7 @@ export default class AsyncThrottle {
 
   async handleFn(resolve, reject) {
     if (this.current < this.max) {
+      this.current = ++this.num;
       try {
         const res = await this.fn();
         resolve(res);

@@ -1,0 +1,10 @@
+{
+  "files":[
+    "src/**/*.ts"
+  ],
+  "compilerOptions":{
+    "target": "ES5",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  }
+}

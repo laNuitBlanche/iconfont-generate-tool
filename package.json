@@ -2,9 +2,9 @@
   "name": "iconfont-generate-tool",
   "version": "1.0.0",
   "description": "A tool to generate Font Icon according to SVG file",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build"
   },
   "keywords": [
     "iconfont"
@@ -20,5 +20,12 @@
     "ttf2eot": "^2.0.0",
     "ttf2woff": "^2.0.2",
     "ttf2woff2-no-gyp": "^2.0.5"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-typescript": "^6.0.0-alpha.1"
   }
 }

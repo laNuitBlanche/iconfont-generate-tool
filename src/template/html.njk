@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>IconFonts Preview Demo -- {{ fontName }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ htmlCSSFile }}">
+    <link rel="stylesheet" href="{{ htmlCssLink }}">
     <style>
         .info {
             padding: 0 20px;
@@ -50,12 +50,12 @@
     </style>
 <body>
     <div class="info">
-        <h3>{{ fontName }} ({{ glyphs.length }})</h3>
+        <h3>{{ fontName }} ({{ data.length }})</h3>
         <div>Class name prefix: {{ cssPrefix }}-</div>
     </div>
     <hr/>
     <div class="flex-tb">
-      {% for glyph in glyphs %}
+      {% for glyph in data %}
         <section>
             <header contenteditable>{{ cssPrefix }}-{{ glyph.name }}</header>
             <div><i class="{{ cssPrefix }}-{{ glyph.name }}"></i></div>

@@ -1,7 +1,7 @@
 @font-face {
     font-family: {{ fontName }};
     {% if formats.indexOf('eot')>-1 -%}
-        src: url("{{ cssFontPath }}{{ fontName }}.eot");
+        src: url("{{ cssFontLink }}{{ fontName }}.eot");
     {%- endif -%}
     {%- set eotIndex = formats.indexOf('eot') -%}
     {%- set woff2Index = formats.indexOf('woff2') -%}
@@ -10,31 +10,31 @@
     {%- set svgIndex = formats.indexOf('svg') -%}
 
     src: {% if eotIndex != -1 -%}
-            url("{{ cssFontPath }}{{ fontName }}.eot?{{ sign }}#iefix") format("embedded-opentype")
+            url("{{ cssFontLink }}{{ fontName }}.eot?{{ sign }}#iefix") format("embedded-opentype")
             {%- set nothing = formats.splice(eotIndex, 1) -%}
             {%- if formats.length != 0 -%},
              {% else -%}; {% endif -%}
         {%- endif -%}
         {%- if woff2Index != -1 -%}
-            url("{{ cssFontPath }}{{ fontName }}.woff2?{{ sign }}") format("woff2")
+            url("{{ cssFontLink }}{{ fontName }}.woff2?{{ sign }}") format("woff2")
             {%- set nothing = formats.splice(woff2Index, 1) -%}
             {%- if formats.length != 0 -%},
              {% else -%}; {% endif -%}
         {%- endif -%}
         {%- if woffIndex != -1 -%}
-            url("{{ cssFontPath }}{{ fontName }}.woff?{{ sign }}") format("woff")
+            url("{{ cssFontLink }}{{ fontName }}.woff?{{ sign }}") format("woff")
             {%- set nothing = formats.splice(woffIndex, 1) -%}
             {%- if formats.length != 0 -%},
              {% else -%}; {% endif -%}
         {%- endif -%}
         {%- if ttfIndex != -1 -%}
-            url("{{ cssFontPath }}{{ fontName }}.ttf?{{ sign }}") format("truetype")
+            url("{{ cssFontLink }}{{ fontName }}.ttf?{{ sign }}") format("truetype")
             {%- set nothing = formats.splice(ttfIndex, 1) -%}
             {%- if formats.length != 0 -%},
              {% else -%}; {% endif -%}
         {%- endif -%}
         {%- if svgIndex != -1 -%}
-            url("{{ cssFontPath }}{{ fontName }}.svg?{{ sign }}#{{ fontName }}") format("svg");
+            url("{{ cssFontLink }}{{ fontName }}.svg?{{ sign }}#{{ fontName }}") format("svg");
         {%- endif %}
     font-weight: normal;
     font-style: normal;
@@ -47,7 +47,7 @@
     font-style: normal;
 }
 
-{% for glyph in glyphs %}
+{% for glyph in data %}
 .{{ cssPrefix }}-{{ glyph.name }}::before {
     content: "\{{ glyph.unicode[0].charCodeAt(0).toString(16) }}";
 }
