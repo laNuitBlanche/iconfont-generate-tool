@@ -83,4 +83,4 @@ JavaScript file content prefix.
 
 ### `svg2ttfFormatOptions`
 
-具体配置项参见[svg2ttf](https://github.com/fontello/svg2ttf)
+Please refer to[svg2ttf](https://github.com/fontello/svg2ttf)
