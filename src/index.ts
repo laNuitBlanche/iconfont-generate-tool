@@ -47,7 +47,6 @@ class IconFontGenerator {
     });
     this.config = config;
     this.config.cssPrefix = config.cssPrefix || config.fontName || 'icon';
-    this.generate();
   }
   async generate() {
     try {
@@ -198,7 +197,7 @@ class IconFontGenerator {
   }
 
   generateCssAndHTML(sign: string, data: SVGMetadataFile[], config: GlobalConfigs & TplConfig) {
-    const outputPath = path.dirname(config.outputDir);
+    const outputPath = config.outputDir;
     config.cssOutput = config.cssOutput || path.join(outputPath, './style/iconfont.css');
     config.htmlOutput = config.htmlOutput || path.join(outputPath, './iconfont-demo.html');
     config.jsOutput = config.jsOutput || path.join(outputPath, './js/icons.js');

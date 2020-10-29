@@ -1,2 +1,5 @@
 node_modules
-dist
+example/fonts
+example/js
+example/style
+example/iconfont-demo.html
